@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html[data-theme='dark']{
+    --bg-color:  #14171A;
+    --text-color:  #ffffff;
+    --a-color: #1DA1F2;
+    --b-color: #1DA1F280;
+}
+
+html{
+    --bg-color:  #ffffff;
+    --text-color:  #14171A;
+    --a-color: #026aab;
+    --b-color: #026aab80;
+}
+
+
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Oswald', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    text-transform: uppercase;
+    background: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    transition: background .25s ease, color .5s ease;
+    
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: currentColor;
+        transition: all ease-in-out;
+        &:hover{
+            color: var(--a-color);
+        }
+    }
+
+    h1{
+        color: var(--a-color);
+    }
+
+    footer{
+        height: 20vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--a-color);
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
