@@ -25,7 +25,7 @@ export default function Nav(){
         <div className="header">
             <div className="nav">
                 <div className="logo">
-                    <a href="/" >
+                    {/* <a href="/" > */}
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         width="216px" height="144px" viewBox="0 0 216 144" enableBackground="new 0 0 216 144" xmlSpace="preserve">
                             <path d="M174.35,18.667l-18.31,70.126l-2.72,10.079l-3.758,13.924c-0.668-3.36-1.237-7.121-1.611-11.662
@@ -35,18 +35,18 @@ export default function Nav(){
                                 l0.154,7.929l0.158,6.293c0,7.357,1.061,13.501,3.186,18.424h29.199h4.223h23.369l28.135-106.095H174.35z M103.181,64.991h-5.958
                                 V28.46h5.958c11.658,0,17.489,6.09,17.489,18.265C120.67,58.902,114.839,64.991,103.181,64.991z"/>
                         </svg>
-                    </a>
+                    {/* </a> */}
                 </div>
 
-                <div className="burger " role="toggle" onClick={onClickHandler}>
+                <div className="burger " onClick={onClickHandler}>
                     <span className= {`line ${isOpen ? " open": ""}`} ></span>
                 </div>
 
                 <div className={`menu-container ${isOpen ? " open": ""}`} >
                     <div className="menu">
-                        <a className="nav-items" role="button" onClick={onClickHandler} href="#home"> Home </a>
-                        <a className="nav-items" role="button" onClick={onClickHandler} href="#projects"> Projects </a>
-                        <a className="nav-items" role="button" onClick={onClickHandler} href="#about"> About </a>
+                        <a className="nav-items" href="#home" onClick={onClickHandler} >Home</a>
+                        <a className="nav-items" href="#projects" onClick={onClickHandler}>Projects</a>
+                        <a className="nav-items" href="#about" onClick={onClickHandler}>About</a>
                     </div>
                     <div className="port">
                         <h1>Kit Harvey Caubalejo</h1>
@@ -59,7 +59,7 @@ export default function Nav(){
                             <a href="https://www.linkedin.com/in/kitharvey/" target="__blank" >linkedin</a>
                             <a href="https://twitter.com/kithrvy" target="__blank" >twitter</a>
                         </div>
-                        <div className="theme" role="tabbable" onClick={handleToggle} >{themeState} mode</div>
+                        <div className="theme" onClick={handleToggle} >{themeState} mode</div>
                     </div>
                     
                 </div>
