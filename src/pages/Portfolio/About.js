@@ -1,18 +1,15 @@
 import React from 'react'
 
 export default function About(){
-    const style = {
-        textTransform: 'uppercase'
-    }
 
     return (
         <div id="about">
-        <p style={style}>about me</p>
+        <p className="uppercase-text">about me</p>
         <div className="about-container">
             <div className="about-details">
                 <div className="overview">
                     <h1>overview</h1>
-                    <p>
+                    <p className="overview-text">
                         Hi, I’m a Front-End Web Developer based in General Santos City, Philippines. I’m always fascinated by graphic design, typography and algorithms. Web development has given me the ability to do both design and code. I was hooked and I want to master this craft. My dream is to work with like-minded and passionate people building amazing projects.
                         When I’m away from my keyboard you can find me at the gym pumping irons, running and spending time with friends and family. I also love learning self-improvement, philosophy, finance and health and fitness. There is always room to grow.
                     </p>

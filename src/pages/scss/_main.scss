@@ -20,7 +20,7 @@
        
     }
 
-    p{
+    .greet, .des{
         text-transform: none;
         font-size: 1.2rem;
     }
@@ -55,40 +55,49 @@
 
     }
 
-    .proj{
-        margin: 40px 0;
-        height: 120px;
-        overflow: hidden;
-        transition: all 250ms ease;
+    .proj-wrapper{
         width: 100%;
-        .details{
-
-            .subtitles{
-                display: flex;
-                align-items: center;
-                .description{
-                    margin-right: 15px;
-                    // height: 20px;
-                }
-                .link{
-                    height: max-content;
-                    margin-right: 15px;
+        .proj{
+            margin: 40px 0;
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            padding: 20px;
+            transition: background .25s ease-in-out;;
+            background: var(--bg-color);
+            &:hover{
+                background: var(--bg-color-two);
+            }
+            .details{
+                
+                .subtitles{
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    .description{
+                        margin-right: 15px;
+                        // height: 20px;
+                    }
+                    .link{
+                        height: max-content;
+                        margin-right: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
                 }
             }
-        }
-        .dropdown{
-            margin-top: 10px;
-            img{
-                width: 85%;
+
+            .video-container{
+                animation: fadeIn .5s ease-in-out;
+                box-shadow: 5px 5px 20px var(--b-color);
             }
         }
-        &:hover {
-            height: 700px;
-        }
     }
+    
 
     .about-container{
         margin-top: 40px;
@@ -110,9 +119,10 @@
             .overview, .tools{
                 width: 50%;
 
-                p{
+                .overview-text{
                     text-transform: none;
                     line-height: 1.6;
+                    font-size: 1.2rem;
                 }
             }
 
@@ -135,6 +145,16 @@
         
     }
 
+}
+
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 

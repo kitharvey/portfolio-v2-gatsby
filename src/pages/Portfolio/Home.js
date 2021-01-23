@@ -8,7 +8,6 @@ export default function Home(){
             <p className="greet">Hi, my name is</p>
             <h1 className="name">Kit Harvey Caubalejo.</h1>
             <p className="des">I'm a self-taught front-end web developer.</p>
-            <p className="line">I help clients convert their design to HTML.</p>
         </div>
         <div className="main-buttons-container">
             <div className="main-buttons">
