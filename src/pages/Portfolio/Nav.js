@@ -16,6 +16,11 @@ export default function Nav(){
         themeState === 'light' ? setThemeState('dark') : setThemeState('light')
     }
 
+    const onClickHandler = (event) => {
+        event.preventDefault()
+        setOpener(!isOpen)
+    }
+
     return (
         <div className="header">
             <div className="nav">
@@ -33,15 +38,15 @@ export default function Nav(){
                     </a>
                 </div>
 
-                <div className="burger" onClick={()=>setOpener(!isOpen)}>
+                <div className="burger " role="toggle" onClick={onClickHandler}>
                     <span className= {`line ${isOpen ? " open": ""}`} ></span>
                 </div>
 
                 <div className={`menu-container ${isOpen ? " open": ""}`} >
                     <div className="menu">
-                        <a className="nav-items" onClick={()=>setOpener(!isOpen)} href="#home"> Home </a>
-                        <a className="nav-items" onClick={()=>setOpener(!isOpen)} href="#projects"> Projects </a>
-                        <a className="nav-items" onClick={()=>setOpener(!isOpen)} href="#about"> About </a>
+                        <a className="nav-items" role="button" onClick={onClickHandler} href="#home"> Home </a>
+                        <a className="nav-items" role="button" onClick={onClickHandler} href="#projects"> Projects </a>
+                        <a className="nav-items" role="button" onClick={onClickHandler} href="#about"> About </a>
                     </div>
                     <div className="port">
                         <h1>Kit Harvey Caubalejo</h1>
@@ -54,7 +59,7 @@ export default function Nav(){
                             <a href="https://www.linkedin.com/in/kitharvey/" target="__blank" >linkedin</a>
                             <a href="https://twitter.com/kithrvy" target="__blank" >twitter</a>
                         </div>
-                        <div className="theme" onClick={handleToggle} >{themeState} mode</div>
+                        <div className="theme" role="tabbable" onClick={handleToggle} >{themeState} mode</div>
                     </div>
                     
                 </div>

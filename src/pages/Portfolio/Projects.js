@@ -1,51 +1,81 @@
-import React, {useState} from 'react'
+import React from 'react'
 import poke from '../../images/poke-decks.mp4'
-import MouseTooltip from 'react-sticky-mouse-tooltip';
+import path from '../../images/pathfinder.mp4'
+import fx from '../../images/fx.mp4'
 
-export default function Projects(){
-    const [isShow, setIsShow] = useState(false)
-    const handleMouseOver = () => {
-        setIsShow(true)
-    }
-    const handleMouseOut = () => {
-        setIsShow(false)
-    }
+const projects = [
+    {
+        title: 'Pokédecks',
+        description: 'A pokédex in card style.',
+        tools: ["react",
+                "typescript",
+                "tailwindcss",
+                "PokéAPI",
+                "Framer",
+                "react-query"],
+        repo: 'https://github.com/kitharvey/poke-decks',
+        demo: 'https://kitharvey.github.io/poke-decks/#/',
+        vid: poke
+    },
+    {
+        title: 'Pathfinder',
+        description: 'A* search algorithm visualizer.',
+        tools: ["html",
+                "javascript",
+                "scss"],
+        repo: 'https://github.com/kitharvey/Pathfinder',
+        demo: 'https://kitharvey.github.io/Pathfinder/',
+        vid: path
+    },
+    {
+        title: 'FX Daily Forecast',
+        description: 'Foreign exchange daily chart, signal and lastest price. All data were fetched from https://fcsapi.com/ and displayed by using react app.',
+        tools: ["react",
+                "scss",
+                "fcsapi"],
+        repo: 'https://github.com/kitharvey/fx-daily-forecast',
+        demo: 'https://kitharvey.github.io/fx-daily-forecast/',
+        vid: fx
+    },
+]
+
+export default function Projects(){   
+
     return(
         <div id="projects">
             <p className="uppercase-text">projects</p>
             <div className="proj-wrapper">
-                <div className="proj" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+                {projects.map( (project, index) => (
+                <div key={index} className="proj" >
                     <div className = "details">
-                        <h1> Pokédecks </h1>
+                        <h1>{project.title}</h1>
                         <div className="subtitles" >
-                            <small className="description" > A pokédex in card style </small>
+                            <small className="description" >{project.description}</small>
+                        </div>
+                        <div className="tools" >
+                            {project.tools.map( (tool, idx) => (
+                                <small key={idx} className="description" >{tool}</small>
+                            ) )}
                         </div>
                         <div className="subtitles" >
-                            <small className="description" > react </small>
-                            <small className="description" > typescript </small>
-                            <small className="description" > tailwindcss </small>
-                            <small className="description" > PokéAPI </small>
-                            <small className="description" > Framer </small>
-                            <small className="description" > react-query </small>
-                        </div>
-                        <div className="subtitles" >
-                            <a className="link" target="__blank" > <small> repository </small> </a>
-                            <a className="link" target="__blank" > <small> website </small> </a> 
+                            <a className="link" href={project.repo} target="__blank" > <small> repository </small> </a>
+                            <a className="link" href={project.demo} target="__blank" > <small> website </small> </a> 
                         </div>
                     </div>
-                    <MouseTooltip
-                        offsetX={15}
-                        offsetY={10}
-                        visible={isShow}
-                    >
                         <div className = "video-container" >
-                            <video preload="metadata" loop width={500}>
-                                    <source src={poke} type="video/mp4" />
-                            </video>
+                            <video loop src={project.vid} type="video/mp4"
+                            onMouseOver={ event =>
+                                event.currentTarget.play()
+                            }
+                            onMouseOut={ event =>
+                                event.currentTarget.pause()
+                            }
+                            />
                         </div>
-                           
-                    </MouseTooltip>
+                        
                 </div>
+                ) )}
+
             </div>
         </div>
     )

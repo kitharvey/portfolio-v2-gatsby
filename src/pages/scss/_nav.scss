@@ -32,41 +32,32 @@
             height: 30px;
             position: relative;
             cursor: pointer;
-
-            &:hover{
-                .line{
-                    background: var(--a-color);
-                    &::before, &::after{
-                        background: var(--a-color);
-                    }
-                }
-            }
             
             .line{
                 position: absolute;
-                top: 16px;
+                top: 10px;
                 height: 3px;
                 width: 30px;
-                background: currentColor;
+                background: var(--a-color);
                 transition: all .25s ease;
 
                 &::before{
                     content: "";
                     position: absolute;
-                    top: -8px;
+                    top: -10px;
                     height: 3px;
                     width: 30px;
-                    background: currentColor;
+                    background: var(--a-color);
                     transition: all .25s ease;
                 }
 
                 &::after{
                     content: "";
                     position: absolute;
-                    top: 8px;
+                    top: 10px;
                     height: 3px;
                     width: 30px;
-                    background: currentColor ;
+                    background: var(--a-color) ;
                     transition: all .25s ease;
                 }
 
@@ -76,12 +67,12 @@
   
                     
                     &::before{
-                        transform: rotate(45deg) translate(3px, 8px);
+                        transform: rotate(45deg) translate(4px, 10px);
   
        
                     }
                     &::after{
-                        transform: rotate(-45deg) translate(3px, -8px);
+                        transform: rotate(-45deg) translate(4px, -10px);
 
 
                     }

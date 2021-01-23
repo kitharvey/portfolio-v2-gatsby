@@ -36,6 +36,7 @@
         .main-buttons{
             cursor: pointer;
             margin-right: 20px;
+            margin-top: 20px;
             padding: 10px 20px;
             border-radius: 5px;
             background: var(--a-color);
@@ -66,20 +67,31 @@
             width: 100%;
             position: relative;
             z-index: 0;
-            padding: 20px;
-            transition: background .25s ease-in-out;;
-            background: var(--bg-color);
+            padding: 20px 0;
+            padding-right: 20px;
+            
+            transition: all .25s ease-in-out;;
             &:hover{
                 background: var(--bg-color-two);
+                padding-left: 20px;
             }
             .details{
-                
+                .tools{
+                    font-size: .8rem;
+                    font-weight: 100;
+                    small{
+                        margin-right: 10px;
+                    }
+                }
                 .subtitles{
                     display: flex;
+                    flex-wrap: wrap;
                     align-items: center;
                     .description{
                         margin-right: 15px;
-                        // height: 20px;
+                        text-transform: none;
+                        font-weight: normal;
+                        font-size: 1rem;
                     }
                     .link{
                         height: max-content;
@@ -92,8 +104,17 @@
             }
 
             .video-container{
+                
+                transition: all .25s ease-in-out;
                 animation: fadeIn .5s ease-in-out;
-                box-shadow: 5px 5px 20px var(--b-color);
+                filter: grayscale(1);
+                &:hover{
+                    filter: grayscale(0);
+                }
+
+                video{
+                    width: 500px;
+                }
             }
         }
     }
@@ -161,15 +182,26 @@
 @media  (max-width: 800px){
     #home, #projects, #about{
         padding: 0 10%;
-        .proj{
+        .proj-wrapper{
+            width: 100%;
+
+            .proj{
                 height: max-content;
-            .dropdown{
-                margin-top: 10px;
-                img{
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 0;
+
+                .video-container{
                     width: 100%;
+                    video{
+                        width: 100%;
+                    }
                 }
+
             }
         }
+
+
         .about-container{
             .about-details{
                 display: flex;
@@ -188,6 +220,10 @@
         p{
             text-transform: none;
             font-size: 1rem;
+        }
+
+        .uppercase-text{
+            text-transform: uppercase;
         }
         
     }
